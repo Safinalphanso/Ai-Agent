@@ -1,20 +1,25 @@
 {
-  "name": "backend",
+  "name": "deadline-agent",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Student deadline agent — extract, update, contradict, query from MongoDB",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "setup": "node scripts/setup.js",
+    "cli": "node cli.js",
+    "corpus": "node cli.js run-corpus",
+    "reset": "node cli.js reset"
   },
-  "keywords": [],
+  "keywords": ["deadline", "agent", "gemini", "mongodb"],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google/genai": "^2.18.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "mongodb": "^7.5.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
