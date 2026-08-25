@@ -12,31 +12,31 @@
     "tag": "noise"
   },
   {
-    "text": "DBMS report submission on 28th August, worth 20% of grade. Submit on LMS.",
+    "text": "Science lab report submission on 28th August, worth 20% of grade. Submit on LMS.",
     "source": "email",
     "received_at": "2026-08-20T11:00:00Z",
     "tag": "new_known"
   },
   {
-    "text": "Reminder from Prof Rao: OS Lab 3 is due Friday 28 August. Bring printed output.",
+    "text": "Reminder from Ms. Rao: Maths worksheet 3 is due Friday 28 August. Show all steps.",
     "source": "class",
     "received_at": "2026-08-20T12:30:00Z",
     "tag": "new_known"
   },
   {
-    "text": "CN quiz next Monday (24 Aug), chapters 1-3. Closed book.",
+    "text": "English quiz next Monday (24 Aug), chapters 1-3. Closed book.",
     "source": "whatsapp",
     "received_at": "2026-08-20T14:00:00Z",
     "tag": "new_known"
   },
   {
-    "text": "can someone send the SE notes pdf?",
+    "text": "can someone send the Science notes pdf?",
     "source": "whatsapp",
     "received_at": "2026-08-20T15:00:00Z",
     "tag": "noise"
   },
   {
-    "text": "Software Engineering assignment 1 due 30 August, 15% weightage.",
+    "text": "English essay draft due 30 August, 15% weightage.",
     "source": "email",
     "received_at": "2026-08-20T16:00:00Z",
     "tag": "new_known"
@@ -48,13 +48,13 @@
     "tag": "noise"
   },
   {
-    "text": "AI midterm on 2 September. Syllabus: search + supervised learning.",
+    "text": "Maths midterm on 2 September. Syllabus: algebra + geometry.",
     "source": "syllabus",
     "received_at": "2026-08-21T08:00:00Z",
     "tag": "new_known"
   },
   {
-    "text": "Hackathon registration closes soon, don't miss it!!!",
+    "text": "Science fair registration closes soon, don't miss it!!!",
     "source": "whatsapp",
     "received_at": "2026-08-21T09:00:00Z",
     "tag": "unknown_deadline"
@@ -66,13 +66,13 @@
     "tag": "noise_sarcasm"
   },
   {
-    "text": "Db Mgmt Sys quiz moved — Quiz 2 is on 26 August, 10%.",
+    "text": "Science quiz moved — Quiz 2 is on 26 August, 10%.",
     "source": "class",
     "received_at": "2026-08-21T10:00:00Z",
     "tag": "new_known"
   },
   {
-    "text": "Operating Systems: mid-sem exam 5 September, 30%.",
+    "text": "English: mid-sem exam 5 September, 30%.",
     "source": "syllabus",
     "received_at": "2026-08-21T11:00:00Z",
     "tag": "new_known"
@@ -84,7 +84,7 @@
     "tag": "noise"
   },
   {
-    "text": "Networks lab report due 27 Aug. Pair submission OK.",
+    "text": "Maths practice sheet due 27 Aug. Pair work OK.",
     "source": "email",
     "received_at": "2026-08-21T12:00:00Z",
     "tag": "new_known"
@@ -96,7 +96,7 @@
     "tag": "noise_past"
   },
   {
-    "text": "SE: project proposal outline due 29 August.",
+    "text": "English: project outline due 29 August.",
     "source": "class",
     "received_at": "2026-08-21T14:00:00Z",
     "tag": "new_known"
@@ -108,13 +108,13 @@
     "tag": "noise"
   },
   {
-    "text": "Artificial Intelligence assignment 1 — dataset exploration — due 1 September, 10%.",
+    "text": "Science assignment 1 — experiment write-up — due 1 September, 10%.",
     "source": "email",
     "received_at": "2026-08-22T08:00:00Z",
     "tag": "new_known"
   },
   {
-    "text": "DBMS report due 25th not 28th",
+    "text": "Science lab report due 25th not 28th",
     "source": "whatsapp",
     "received_at": "2026-08-22T09:00:00Z",
     "tag": "explicit_correction"
@@ -126,13 +126,13 @@
     "tag": "noise"
   },
   {
-    "text": "CN: Tutorial attendance compulsory next Tuesday.",
+    "text": "Maths: Tutorial attendance compulsory next Tuesday.",
     "source": "class",
     "received_at": "2026-08-22T11:00:00Z",
     "tag": "edge_maybe_noise_or_other"
   },
   {
-    "text": "Soft Eng — midterm on 4 September.",
+    "text": "English midterm on 4 September.",
     "source": "syllabus",
     "received_at": "2026-08-22T12:00:00Z",
     "tag": "new_known"
@@ -144,7 +144,7 @@
     "tag": "noise"
   },
   {
-    "text": "OS lab due next Friday",
+    "text": "Maths worksheet due next Friday",
     "source": "whatsapp",
     "received_at": "2026-08-24T09:02:00Z",
     "tag": "contradiction_next_friday"
@@ -156,13 +156,13 @@
     "tag": "noise"
   },
   {
-    "text": "OS lab submission deadline: this Friday",
+    "text": "Maths worksheet deadline: this Friday",
     "source": "email",
     "received_at": "2026-08-25T18:40:00Z",
     "tag": "confirmation_this_friday"
   },
   {
-    "text": "reminder — DBMS report due 25th",
+    "text": "reminder — Science lab report due 25th",
     "source": "whatsapp",
     "received_at": "2026-08-23T08:00:00Z",
     "tag": "confirmation"
@@ -174,13 +174,13 @@
     "tag": "noise_or_other"
   },
   {
-    "text": "DBMS: ER diagram practice sheet — no deadline, optional.",
+    "text": "Science: practice sheet — no deadline, optional.",
     "source": "class",
     "received_at": "2026-08-23T10:00:00Z",
     "tag": "noise_or_skip"
   },
   {
-    "text": "Computer Networks assignment 2 due 31 August, 20%.",
+    "text": "Maths assignment 2 due 31 August, 20%.",
     "source": "email",
     "received_at": "2026-08-23T11:00:00Z",
     "tag": "new_known"
@@ -192,13 +192,13 @@
     "tag": "noise"
   },
   {
-    "text": "AI seminar attendance form — submit whenever before the talk.",
+    "text": "English seminar attendance form — submit whenever before the talk.",
     "source": "email",
     "received_at": "2026-08-23T13:00:00Z",
     "tag": "unknown_deadline"
   },
   {
-    "text": "Prof: DBMS Quiz 2 is actually on 27th not 26th.",
+    "text": "Prof: Science Quiz 2 is actually on 27th not 26th.",
     "source": "class",
     "received_at": "2026-08-23T14:00:00Z",
     "tag": "explicit_correction"
@@ -210,25 +210,25 @@
     "tag": "noise"
   },
   {
-    "text": "SE assignment 1 moved to 1 September (was 30 Aug).",
+    "text": "English essay draft moved to 1 September (was 30 Aug).",
     "source": "whatsapp",
     "received_at": "2026-08-23T16:00:00Z",
     "tag": "explicit_correction"
   },
   {
-    "text": "lol CN quiz destroyed me already mentally and it's not even Monday",
+    "text": "lol English quiz destroyed me already mentally and it's not even Monday",
     "source": "whatsapp",
     "received_at": "2026-08-23T17:00:00Z",
     "tag": "noise"
   },
   {
-    "text": "Operating System lab cancelled, will be rescheduled",
+    "text": "Maths worksheet cancelled, will be rescheduled",
     "source": "email",
     "received_at": "2026-08-26T08:00:00Z",
     "tag": "cancelled"
   },
   {
-    "text": "Reminder: DBMS report on the 25th, and CN assignment 2 is due 31st",
+    "text": "Reminder: Science report on the 25th, and Maths assignment 2 is due 31st",
     "source": "whatsapp",
     "received_at": "2026-08-24T11:00:00Z",
     "tag": "multi_task"
@@ -246,7 +246,7 @@
     "tag": "noise"
   },
   {
-    "text": "AI assignment 1 due date is 3 September according to the TA",
+    "text": "Science assignment 1 due date is 3 September according to the TA",
     "source": "whatsapp",
     "received_at": "2026-08-24T14:00:00Z",
     "tag": "possible_conflict"
@@ -258,7 +258,7 @@
     "tag": "noise"
   },
   {
-    "text": "CN quiz on 24 Aug — bring ID card",
+    "text": "English quiz on 24 Aug — bring ID card",
     "source": "class",
     "received_at": "2026-08-22T18:00:00Z",
     "tag": "confirmation"
@@ -276,25 +276,25 @@
     "tag": "noise"
   },
   {
-    "text": "Hackathon registration closes Sunday 30 August, form on portal.",
+    "text": "Science fair registration closes Sunday 30 August, form on portal.",
     "source": "email",
     "received_at": "2026-08-25T08:00:00Z",
     "tag": "fills_unknown"
   },
   {
-    "text": "SE project proposal outline still due 29 Aug — confirmed by prof.",
+    "text": "English project outline still due 29 Aug — confirmed by teacher.",
     "source": "whatsapp",
     "received_at": "2026-08-25T09:00:00Z",
     "tag": "confirmation"
   },
   {
-    "text": "anyone have the DBMS textbook pdf?",
+    "text": "anyone have the Science textbook pdf?",
     "source": "whatsapp",
     "received_at": "2026-08-25T10:00:00Z",
     "tag": "noise"
   },
   {
-    "text": "Networks lab report: actually due 26 Aug not 27.",
+    "text": "Maths practice sheet: actually due 26 Aug not 27.",
     "source": "whatsapp",
     "received_at": "2026-08-25T11:00:00Z",
     "tag": "explicit_correction"
@@ -306,19 +306,19 @@
     "tag": "noise"
   },
   {
-    "text": "OS mid-sem is on 5 September (syllabus PDF).",
+    "text": "English mid-sem is on 5 September (syllabus PDF).",
     "source": "syllabus",
     "received_at": "2026-08-25T13:00:00Z",
     "tag": "confirmation"
   },
   {
-    "text": "ML reading group optional meetup Friday evening",
+    "text": "reading group optional meetup Friday evening",
     "source": "whatsapp",
     "received_at": "2026-08-25T14:00:00Z",
     "tag": "noise_or_other"
   },
   {
-    "text": "DBMS lab viva schedule will be announced later.",
+    "text": "Science lab viva schedule will be announced later.",
     "source": "class",
     "received_at": "2026-08-25T15:00:00Z",
     "tag": "unknown_deadline"
@@ -330,13 +330,13 @@
     "tag": "noise"
   },
   {
-    "text": "Soft Eng midterm: some say it's 3 Sept, others say 4 Sept.",
+    "text": "English midterm: some say it's 3 Sept, others say 4 Sept.",
     "source": "whatsapp",
     "received_at": "2026-08-25T17:00:00Z",
     "tag": "contradiction_ish"
   },
   {
-    "text": "CN assignment 2 worth 20% — due 31 August. Confirmed.",
+    "text": "Maths assignment 2 worth 20% — due 31 August. Confirmed.",
     "source": "email",
     "received_at": "2026-08-26T07:00:00Z",
     "tag": "confirmation"
@@ -348,7 +348,7 @@
     "tag": "noise"
   },
   {
-    "text": "AI midterm still 2 September. Bring calculator if you want, not needed.",
+    "text": "Maths midterm still 2 September. Bring calculator if you want.",
     "source": "class",
     "received_at": "2026-08-26T09:00:00Z",
     "tag": "confirmation"
@@ -360,7 +360,7 @@
     "tag": "noise"
   },
   {
-    "text": "DBMS Quiz 2: 27 August, 10% — don't forget.",
+    "text": "Science Quiz 2: 27 August, 10% — don't forget.",
     "source": "whatsapp",
     "received_at": "2026-08-26T11:00:00Z",
     "tag": "confirmation"
@@ -372,13 +372,13 @@
     "tag": "noise"
   },
   {
-    "text": "SE assignment 1 is due 1 September (moved).",
+    "text": "English essay draft is due 1 September (moved).",
     "source": "email",
     "received_at": "2026-08-26T13:00:00Z",
     "tag": "confirmation"
   },
   {
-    "text": "is the OS lab due this week or next?",
+    "text": "is the Maths worksheet due this week or next?",
     "source": "whatsapp",
     "received_at": "2026-08-26T14:00:00Z",
     "tag": "question_noise"
@@ -390,7 +390,7 @@
     "tag": "unknown_deadline"
   },
   {
-    "text": "Prof confirmed: OS lab rescheduled to 4 September.",
+    "text": "Teacher confirmed: Maths worksheet rescheduled to 4 September.",
     "source": "email",
     "received_at": "2026-08-27T08:00:00Z",
     "tag": "explicit_correction_after_cancel"
@@ -402,19 +402,19 @@
     "tag": "noise"
   },
   {
-    "text": "CN: midterm exam on 8 September, 25%.",
+    "text": "Maths: unit test on 8 September, 25%.",
     "source": "syllabus",
     "received_at": "2026-08-27T10:00:00Z",
     "tag": "new_known"
   },
   {
-    "text": "spam: buy cryptocurrency now 🚀🚀",
+    "text": "spam: buy cryptocurrency now",
     "source": "whatsapp",
     "received_at": "2026-08-27T11:00:00Z",
     "tag": "noise"
   },
   {
-    "text": "AI assignment 1 actually due 1 September not 3 — correction from course page.",
+    "text": "Science assignment 1 actually due 1 September not 3 — correction from course page.",
     "source": "email",
     "received_at": "2026-08-27T12:00:00Z",
     "tag": "explicit_correction"
@@ -426,13 +426,13 @@
     "tag": "noise"
   },
   {
-    "text": "DBMS end-sem registration opens — exact last date not announced yet.",
+    "text": "Science end-sem registration opens — exact last date not announced yet.",
     "source": "class",
     "received_at": "2026-08-27T14:00:00Z",
     "tag": "unknown_deadline"
   },
   {
-    "text": "Reminder from TA: Networks lab report due 26 Aug.",
+    "text": "Reminder from TA: Maths practice sheet due 26 Aug.",
     "source": "whatsapp",
     "received_at": "2026-08-25T20:00:00Z",
     "tag": "confirmation"
@@ -444,25 +444,25 @@
     "tag": "noise"
   },
   {
-    "text": "SE: coding lab evaluation on 6 September.",
+    "text": "English: oral presentation on 6 September.",
     "source": "class",
     "received_at": "2026-08-28T08:00:00Z",
     "tag": "new_known"
   },
   {
-    "text": "confirmed: Soft Eng midterm is 4 September (ignore the rumor about the 3rd).",
+    "text": "confirmed: English midterm is 4 September (ignore the rumor about the 3rd).",
     "source": "email",
     "received_at": "2026-08-28T09:00:00Z",
     "tag": "explicit_correction"
   },
   {
-    "text": "good luck everyone for CN quiz",
+    "text": "good luck everyone for English quiz",
     "source": "whatsapp",
     "received_at": "2026-08-23T20:00:00Z",
     "tag": "noise"
   },
   {
-    "text": "Syllabus snippet: DBMS — Project phase 1 deliverable due 10 September, 25%.",
+    "text": "Syllabus snippet: Science — Project phase 1 deliverable due 10 September, 25%.",
     "source": "syllabus",
     "received_at": "2026-08-28T10:00:00Z",
     "tag": "new_known"
@@ -474,7 +474,7 @@
     "tag": "noise"
   },
   {
-    "text": "Opsys: tutorial sheet 4 due sometime this month (TA didn't specify day).",
+    "text": "Maths: tutorial sheet 4 due sometime this month (teacher didn't specify day).",
     "source": "whatsapp",
     "received_at": "2026-08-28T12:00:00Z",
     "tag": "unknown_deadline"

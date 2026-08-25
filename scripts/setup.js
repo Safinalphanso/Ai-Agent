@@ -1,15 +1,10 @@
 #!/usr/bin/env node
 require("dotenv").config();
 const { connect, close } = require("../src/db");
-const { seedCourses } = require("../src/courses");
 
 async function main() {
   await connect();
-  const courses = await seedCourses();
-  console.log(`Seeded ${courses.length} courses:`);
-  for (const c of courses) {
-    console.log(`  - ${c.name} (${(c.aliases || []).join(", ")})`);
-  }
+  console.log("Database connected. Add subjects via the UI or POST /courses.");
   await close();
 }
 

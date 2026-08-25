@@ -1,36 +1,18 @@
 const { connect, oid } = require("./db");
 
-const SEED_COURSES = [
-  { name: "DBMS", aliases: ["Database Systems", "Db Mgmt Sys", "Database Management", "DB"] },
-  { name: "OS", aliases: ["Operating Systems", "Operating System", "Opsys"] },
-  { name: "CN", aliases: ["Computer Networks", "Networks", "Networking"] },
-  { name: "SE", aliases: ["Software Engineering", "Soft Eng"] },
-  { name: "AI", aliases: ["Artificial Intelligence", "ML", "Machine Learning"] },
-];
-
-async function seedCourses() {
-  const db = await connect();
-  const col = db.collection("courses");
-  for (const c of SEED_COURSES) {
-    await col.updateOne(
-      { name: c.name },
-      { $setOnInsert: { ...c, created_at: new Date() } },
-      { upsert: true }
-    );
-  }
-  return col.find({}).toArray();
-}
-
 async function listCourses() {
   const db = await connect();
-  return db.collection("courses").find({}).toArray();
+  return db.collection("courses").find({}).sort({ name: 1 }).toArray();
 }
 
+/** Find an existing course by name/alias, or create it from the message extraction. */
 async function findOrCreateCourse(name) {
   if (!name) return null;
   const db = await connect();
   const col = db.collection("courses");
-  const normalized = name.trim();
+  const normalized = String(name).trim();
+  if (!normalized) return null;
+
   const existing = await col.findOne({
     $or: [
       { name: { $regex: `^${escapeRegex(normalized)}$`, $options: "i" } },
@@ -52,7 +34,7 @@ function escapeRegex(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-async function getOpenTasks(limit = 40) {
+async function getOpenTasks(limit = 25) {
   const db = await connect();
   const tasks = await db
     .collection("tasks")
@@ -95,7 +77,6 @@ function formatDate(d) {
 }
 
 module.exports = {
-  seedCourses,
   listCourses,
   findOrCreateCourse,
   getOpenTasks,

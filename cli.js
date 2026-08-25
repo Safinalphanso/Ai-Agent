@@ -14,9 +14,9 @@
 
 require("dotenv").config();
 const { connect, close } = require("./src/db");
-const { seedCourses } = require("./src/courses");
 const { ingestMessage } = require("./src/pipeline");
 const { dueThisWeek, needsConfirmation, listTasks, taskHistory } = require("./src/queries");
+const extractionCache = require("./src/extractionCache");
 
 async function main() {
   const [cmd, ...rest] = process.argv.slice(2);
@@ -26,7 +26,6 @@ async function main() {
   }
 
   await connect();
-  await seedCourses();
 
   try {
     switch (cmd) {
@@ -71,7 +70,7 @@ Commands:
   list                                       All stored tasks
   history <taskId>                           Version audit trail
   run-corpus                                 Replay data/test-messages.json
-  reset                                      Wipe messages/tasks/versions (keeps courses)
+  reset                                      Wipe messages/tasks/versions/courses
 `);
 }
 
@@ -87,7 +86,22 @@ async function cmdIngest(args) {
     source,
     receivedAt: at ? new Date(at) : new Date(),
   });
-  console.log(JSON.stringify(result, null, 2));
+  console.log(`\n${result.outcome_label}`);
+  console.log(result.summary);
+  for (const item of result.items || []) {
+    console.log(`\n  ${item.action_label}`);
+    if (item.subject || item.task) {
+      console.log(`  Subject: ${item.subject || "—"}`);
+      console.log(`  Task:    ${item.task || "—"}`);
+      console.log(`  Due:     ${item.due_display || "Date unknown"}`);
+      if (item.status_label) console.log(`  Status:  ${item.status_label}`);
+    } else {
+      console.log(`  ${item.summary}`);
+    }
+    if (item.conflict) console.log(`  ${item.conflict.message}`);
+    if (item.task_id) console.log(`  id: ${item.task_id}`);
+  }
+  console.log();
 }
 
 function parseIngestArgs(args) {
@@ -110,16 +124,10 @@ async function cmdNeedsConfirmation() {
   const tasks = await needsConfirmation();
   console.log(`\nNeeds confirmation (${tasks.length})\n`);
   for (const t of tasks) {
-    console.log(`• [${t.course || "?"}] ${t.title}`);
-    console.log(`  live due_date: ${t.due_date ?? "(unknown)"}  status: ${t.status}`);
-    if (t.claimed_due_dates?.length) {
-      console.log(`  claimed dates: ${t.claimed_due_dates.join(" vs ")}`);
-    }
-    if (t.version_reasons?.length) {
-      for (const v of t.version_reasons) {
-        console.log(`    - ${v.reason}: ${v.due_date ?? "null"}`);
-      }
-    }
+    console.log(`• ${t.summary}`);
+    console.log(`  Subject: ${t.subject || "—"}  |  Task: ${t.task}`);
+    console.log(`  Due: ${t.due_display}  |  Status: ${t.status_label}`);
+    if (t.conflict_display) console.log(`  Conflict: ${t.conflict_display}`);
     console.log(`  id: ${t.id}\n`);
   }
 }
@@ -131,10 +139,12 @@ function printTasks(tasks, heading) {
     return;
   }
   for (const t of tasks) {
-    const weight = t.weightage != null ? `${t.weightage}%` : "—";
+    console.log(`• ${t.summary}`);
     console.log(
-      `• ${t.due_date ?? "????-??-??"}  [${t.status}]  ${t.course || "?"} — ${t.title} (${t.task_type}, ${weight})`
+      `  Subject: ${t.subject || "—"}  |  Task: ${t.task}  |  Type: ${t.task_type}` +
+        (t.weightage_display ? `  |  Weight: ${t.weightage_display}` : "")
     );
+    console.log(`  Due: ${t.due_display}  |  Status: ${t.status_label}`);
     console.log(`  id: ${t.id}`);
   }
   console.log();
@@ -152,17 +162,31 @@ async function cmdHistory(taskId) {
     process.exitCode = 1;
     return;
   }
-  console.log(JSON.stringify(data, null, 2));
+  const t = data.task;
+  console.log(`\nSubject: ${t.subject || "—"}`);
+  console.log(`Task:    ${t.task}`);
+  console.log(`Due:     ${t.due_display}  |  Status: ${t.status_label}\n`);
+  for (const v of data.versions || []) {
+    console.log(`• ${v.reason_label} — ${v.due_display}`);
+    if (v.source_excerpt) console.log(`  “${v.source_excerpt}”`);
+  }
+  console.log();
 }
 
 async function cmdRunCorpus() {
   const messages = require("./data/test-messages.json");
   const { RPM_LIMIT, MIN_INTERVAL_MS, MODEL } = require("./src/gemini");
+
   const estMin = ((messages.length * MIN_INTERVAL_MS) / 60_000).toFixed(1);
   console.log(
     `Replaying ${messages.length} messages via ${MODEL} ` +
       `(~${RPM_LIMIT} RPM, ≥${(MIN_INTERVAL_MS / 1000).toFixed(1)}s between calls, ~${estMin} min)...\n`
   );
+  console.log("Required cases covered in corpus:");
+  console.log("  • noise — e.g. football / lunch / memes");
+  console.log("  • contradiction — Maths 'next Friday' vs 'this Friday'");
+  console.log("  • unknown deadline — e.g. 'Science fair registration closes soon'\n");
+
   let i = 0;
   for (const m of messages) {
     i += 1;
@@ -173,8 +197,8 @@ async function cmdRunCorpus() {
         source: m.source || "whatsapp",
         receivedAt: m.received_at ? new Date(m.received_at) : new Date(),
       });
-      const actions = result.results.map((r) => r.action || r.classification).join(",");
-      console.log(`→ ${result.classification} (${actions})`);
+      const actions = (result.items || []).map((i) => i.action || result.outcome).join(",");
+      console.log(`→ ${result.outcome} (${actions})`);
     } catch (err) {
       console.log(`→ ERROR: ${err.message}`);
     }
@@ -190,7 +214,9 @@ async function cmdReset() {
   await db.collection("messages").deleteMany({});
   await db.collection("task_versions").deleteMany({});
   await db.collection("tasks").deleteMany({});
-  console.log("Cleared messages, tasks, and task_versions.");
+  await db.collection("courses").deleteMany({});
+  extractionCache.clear();
+  console.log("Cleared messages, tasks, task_versions, courses, and extraction cache.");
 }
 
 main().catch((err) => {

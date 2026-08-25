@@ -115,6 +115,6 @@ data/test-messages.json # 80 fake messages (noise, contradiction, unknown date)
 ## Notes
 
 - Keys stay in `.env` (gitignored). Never commit secrets.
-- Model: `gemini-2.5-flash` only (no fake fallback models).
+- Model: `gemini-3.6-flash` (required for new API keys; override with `GEMINI_MODEL`).
 - Rate limit: proactive spacing for free-tier **5 RPM** (`GEMINI_RPM` to override), plus real `sleep` on 429 using the API's `retryDelay`.
 - Confidence below 0.6 refuses to update an existing task (avoids silent wrong merges).
